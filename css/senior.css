@@ -1,0 +1,626 @@
+/*========= ページネーションCSS ===============*/
+
+/*.list {
+	text-align: right;
+	margin: 0 5% 0 0;
+	
+	opacity: 0;
+	width: 0;
+	height: 0;
+
+	
+}*/
+/*.listAnime {
+	text-align: right;
+	margin: 0 5% 0 0;
+
+	animation-name: listAniem;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+@keyframes listAnime{
+	from {
+       opacity: 0;
+	}
+	to {
+       opacity: 1;
+	}
+}*/
+.list ul {
+	width: 100%;
+	margin-left: auto;
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+}
+.list li {
+	flex: 1 1 auto;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+	font-weight: bolder;
+	margin-right: 5%;
+}
+.list li a:hover {
+	color: red;
+}
+.first {
+	margin-left: 0;
+	padding-left: 0;
+}
+/*.listAnime li {
+	text-decoration: none;
+	list-style: none;
+	border-bottom: 1px black solid;
+}*/
+li a:hover {
+	transform: scale(1.2);
+	font-weight: bolder;
+}
+
+.headerFlex {
+	display: flex;
+}
+.Title {
+	flex: 1 1 auto;
+}
+.Title a:hover {
+	font-size: 1.5em;
+	font-weight: 1.5em;
+}
+/*
+.roppo {
+	flex: 1 1 auto;
+	margin: 5% 5% 0 80%;
+}*/
+
+a {
+	text-decoration: none;
+	color: black;
+}
+h2:hover {
+	transform: scale(1.1);
+	font-weight: 2em;
+}
+.wrapper {
+	background-color: white;
+}
+.title {
+	margin-left: 5%;
+	font-size: 1em;
+}
+.Title {
+	width: 50%;
+}
+.sotukaisei {
+	/*margin-left: 40%;*/
+	font-weight: bolder;
+}
+#box1 {
+    background: url('../img/senior1.jpg') center/ cover;
+	width: 100%;
+	height: fit-content;
+	
+}
+h1{
+	font-size: 2.5em;
+	margin: 5%;
+}
+#box2 {
+    background: url('../img/senior2.jpg') center/ cover;
+	width: fit-content;
+	height: fit-content; /*ここでMAX100vhにしてるから子要素の合計を100vhにしないと飛び出すお*/
+	
+}
+/* #box3 {
+    background: url('../img/senior2.jpg') center/ cover;
+	width: fit-content;
+	height: fit-content; *//*ここでMAX100vhにしてるから子要素の合計を100vhにしないと飛び出すお*/
+	
+/*}*/ 
+#box4 {
+    background: url('../img/senior3.jpg') center/ cover;
+	width: 100%;
+	height: fit-content;
+	
+}
+#box4 h1{
+	/*font-size: 3em;*/
+	margin: 5% 5% 5% 0;
+	text-align: right;
+}
+
+/*paginationの設定*/
+.pagination {
+	position:fixed;
+	right:20px;
+	top: 50%;
+  	transform: translateY(-50%);
+	font-size:1em;
+	z-index: 10;
+	list-style: none;
+}
+
+.pagination a {
+	display:block;
+	height:20px;
+	margin-bottom:5px;
+	color:#fff;
+	position:relative;
+	padding:4px;
+}
+
+.pagination a.active:after {
+	box-shadow:inset 0 0 0 5px;
+}
+
+/*現在地表示のテキストの設定*/
+.pagination a .hover-text {
+	position:absolute;
+	right:15px;
+	top:0;
+	opacity:0;
+	-webkit-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+	padding-right: 15px;
+}
+
+.pagination a:hover .hover-text {
+	opacity: 1;
+}
+
+.pagination a:after {
+	-webkit-transition:box-shadow 0.5s ease;
+	transition:box-shadow 0.5s ease;
+	width:10px;
+	height:10px;
+	display: block;
+	border:1px solid;
+	border-radius:50%;
+	content:"";
+	position: absolute;
+	margin:auto;
+	top:0;
+	right:3px;
+	bottom:0;
+}
+
+/*768px以下は現在地表示のテキストを非表示*//*
+@media screen and (max-width:768px) { 
+	.pagination a .hover-text{
+		display: none;
+	}	
+}*/
+
+/*ぼかしから出現*/
+.flex {
+	display: flex;
+}
+.innerBox1{
+	flex: 1 1 auto;
+	border-radius: 2%;
+	border: 2px black solid;
+	width: 50%;
+	height: fit-content;
+	margin: 5%;
+	background: white;
+	opacity: 0;
+
+	/*animation-name: boxAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;*/
+}
+
+.innerBox2{
+	flex: 1 1 auto;
+	border-radius: 2%;
+	border: 2px black solid;
+	width: 50%;
+	height: fit-content;
+	margin: 5%;
+	background: white;
+	opacity: 0;
+
+	/*animation-name: boxAnime;  //消し忘れていた過去のプログラムがバグの原因に
+	animation-duration: 1s;
+	animation-fill-mode: forwards;*/
+}
+
+
+/*ボックスアニメ*/
+
+.innerBoxAnime{
+	animation-name: boxAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+}
+@keyframes boxAnime{
+	from {
+		filter: blur(15px);
+		transform: scale(1.05);
+	}
+	to {
+		filter: blur(0);
+		transform: scale(1);
+		opacity: 0.8;
+	}
+}
+
+/*タイトルアニメ*//*これより下に問題あり？*/
+
+.translateTitleBox{
+	animation-name: translateTitleBox;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	/*overflow: hidden;*/ /*よくわからないがoverflow:hiddenを消したら治った。*/
+	position: relative;
+	width: 70%;
+	opacity: 0;/*これつけとかないと中身の文字ごと表示されちゃう*//*これより上に問題あり？*/
+}
+.translateTitleBox::before{
+	animation-name: translateTitleAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: #fff;
+	content: '';
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+.translateTitle {
+	animation-name: translateTitle;
+	animation-duration: 1s;
+	animation-delay: 0.7s;
+	animation-fill-mode: forwards;
+	opacity: 0;/*これつけとかないと中身の文字ごと擬似要素の*//*ここより上に問題あり？*/
+}
+@keyframes translateTitleBox{
+	from {
+		opacity: 0;
+		transform: translateX(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes translateTitleAnime{
+	0%{
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+	50%{
+		transform-origin: left;
+		transform: scaleX(1);/*横の広がり*/
+	}
+	50.001%{
+		transform-origin: right;
+		transform: scaleX(1);
+	}
+	100%{
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+}
+@keyframes translateTitle{
+	from {
+		opacity: 0;
+		transform: translateX(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.translateTitleBox01{
+	animation-name: translateTitle1Box;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	/*overflow: hidden;*/ /*よくわからないがoverflow:hiddenを消したら治った。*/
+	position: relative;
+	width: 70%;
+	opacity: 0;/*これつけとかないと中身の文字ごと表示されちゃう*//*これより上に問題あり？*/
+}
+.translateTitleBox01::before{
+	animation-name: translateTitle1Anime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: #fff;
+	content: '';
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+.translateTitle01 {
+	animation-name: translateTitle1;
+	animation-duration: 1s;
+	animation-delay: 0.7s;
+	animation-fill-mode: forwards;
+	opacity: 0;/*これつけとかないと中身の文字ごと擬似要素の*//*ここより上に問題あり？*/
+}
+@keyframes translateTitle1Box{
+	from {
+		opacity: 0;
+		transform: translateX(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes translateTitle1Anime{
+	0%{
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+	50%{
+		transform-origin: left;
+		transform: scaleX(1);横の広がり
+	}
+	50.001%{
+		transform-origin: right;
+		transform: scaleX(1);
+	}
+	100%{
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+}
+@keyframes translateTitle1{
+	from {
+		opacity: 0;
+		transform: translateX(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/*タイトルアニメ*/
+.translateTitleBox02{
+	animation-name: translateTitle2Box;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;*/
+	/*overflow: hidden;*/
+	position: relative;
+	width: 70%;
+	opacity: 0;/*これつけとかないと中身の文字ごと表示されちゃう*/
+}
+.translateTitleBox02::before{
+	animation-name: translateTitle2Anime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: #fff;
+	content: '';
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+.translateTitle02 {
+	animation-name: translateTitle2;
+	animation-duration: 1s;
+	animation-delay: 0.7s;
+	animation-fill-mode: forwards;
+	opacity: 0;/*これつけとかないと中身の文字ごと擬似要素の*/
+}
+@keyframes translateTitle2Box{
+	from {
+		opacity: 0;
+		transform: translateX(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes translateTitle2Anime{
+	0%{
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+	50%{
+		transform-origin: left;
+		transform: scaleX(1);/*横の広がり*/
+	}
+	50.001%{
+		transform-origin: right;
+		transform: scaleX(1);
+	}
+	100%{
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+}
+@keyframes translateTitle2{
+	from {
+		opacity: 0;
+		transform: translateX(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+/*タイトルアニメ*/
+.content3 {
+	text-align: right;
+}
+.translateTitle3Box{
+	/*text-align: right;*//*これつけてたら擬似要素のwidthがゼロになった*/
+	margin-left: auto;
+	margin-right: 3%;
+
+	animation-name: translateTitle3Box;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	/*overflow: hidden;*/
+	position: relative;
+	width: 70%;
+	opacity: 0;/*これつけとかないと中身の文字ごと表示されちゃう*/
+}
+.translateTitle3Box::before{
+    animation-name: translateTitle3Anime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: #fff;
+	content: '';
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+.translateTitle3 {
+	animation-name: translateTitle3;
+	animation-duration: 1s;
+	animation-delay: 0.7s;
+	animation-fill-mode: forwards;
+	opacity: 0;/*これつけとかないと中身の文字ごと擬似要素の*/
+}
+@keyframes translateTitle3Box{
+	from {
+		opacity: 0;
+		transform: translateX(20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes translateTitle3Anime{
+	0%{
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+	50%{
+		transform-origin: right;
+		transform: scaleX(1);/*横の広がり*/
+	}
+	50.001%{
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+	100%{
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+}
+@keyframes translateTitle3{
+	from {
+		opacity: 0;
+		transform: translateX(20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+
+/*toAnime*/
+.topAnime1 {
+	animation-name: topAnime;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	opacity: 0;
+}
+.topAnime2 {
+	animation-name: topAnime;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 0.4s;
+	opacity: 0;
+}
+.topAnime3 {
+	animation-name: topAnime;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 0.8s;
+	opacity: 0;
+}
+@keyframes topAnime{
+	from {
+		transform: translateY(40%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.first a:hover {
+	font-size: 1.2em;
+	font-weight: 2em;
+}
+.second a:hover {
+	font-size: 1.2em;
+	font-weight: 2em;
+}
+.third a:hover {
+	font-size: 1.2em;
+	font-weight: 2em;
+}
+
+@media (max-width: 768px){
+	.pagination a .hover-text{
+		display: none;
+	}	
+
+.flex {
+	display: block;
+	height: fit-content;
+}
+.innerBox1 {
+	margin: 3% auto;
+	width: 90%;
+	height: fit-content;
+	
+}
+.innerBox2 {
+	margin: 0 auto 5% auto;
+	width: 90%;
+	height: fit-content;
+}
+
+.translateTitle1Box{
+	font-size: 1em;
+	width: 100%;
+	
+}
+.translateTitle2Box{
+	font-size: 1em;
+	width: 100%;
+	
+}
+.translateTitle3Box{
+	font-size: 1em;
+	margin-left: auto;
+	margin-right: 3%;
+	width: 100%;
+	
+}
+}
+.asaho-img{
+	width: 80%;
+	opacity: 1;
+	margin-top: 10%;
+}
+.innerBox1,.innerBox2 {
+	text-align: center;
+}
+.asaho-status {
+	margin-left: auto;
+	margin-right: 3%;
+}
+p {
+	text-indent: 1rem;
+}
+footer {
+	text-align: center;
+}
